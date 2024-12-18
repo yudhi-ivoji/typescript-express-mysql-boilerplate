@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import Joi from 'joi';
 import { NextFunction, Request, Response } from 'express';
 import ApiError from '@helpers/ApiError.js';

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-shadow */
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import * as bcrypt from 'bcrypt';
 import { uuid } from 'uuidv4';
 import { Request } from 'express';

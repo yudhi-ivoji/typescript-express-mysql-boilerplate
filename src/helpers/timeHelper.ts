@@ -1,7 +1,7 @@
 import { parseISO } from 'date-fns';
 import * as dateFns from 'date-fns-tz';
 
-const { format, utcToZonedTime, zonedTimeToUtc } = dateFns;
+const { format, toZonedTime, fromZonedTime } = dateFns;
 /**
  * Covert timezone
  * @param {String/Date} inputTime
@@ -26,13 +26,13 @@ export const convertTimezone = (
         let currentTimeInGivenTimezone;
 
         if (currentTimezone === 'UTC') {
-            currentTimeInGivenTimezone = utcToZonedTime(inputTime, convertTimezone);
+            currentTimeInGivenTimezone = toZonedTime(inputTime, convertTimezone);
         } else {
-            const currentTimezoneToUtc = zonedTimeToUtc(inputTime, currentTimezone);
+            const currentTimezoneToUtc = fromZonedTime(inputTime, currentTimezone);
             if (convertTimezone === 'UTC') {
                 currentTimeInGivenTimezone = currentTimezoneToUtc;
             } else {
-                currentTimeInGivenTimezone = utcToZonedTime(currentTimezoneToUtc, convertTimezone);
+                currentTimeInGivenTimezone = toZonedTime(currentTimezoneToUtc, convertTimezone);
             }
         }
         return format(currentTimeInGivenTimezone, formatPattern, { timeZone: convertTimezone });

@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import * as bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import { logger } from '@configs/logger.js';

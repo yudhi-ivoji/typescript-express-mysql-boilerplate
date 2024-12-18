@@ -12,6 +12,6 @@ export default interface ITokenService {
         blacklisted: boolean
     ) => Promise<IToken>;
     saveMultipleTokens: (tokens: object[]) => Promise<boolean>;
-    removeTokenById: (id: number) => Promise<boolean>;
+    removeToken: (token: string) => Promise<boolean>;
     generateAuthTokens: (user: IUser) => Promise<object>;
 }

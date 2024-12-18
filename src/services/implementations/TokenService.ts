@@ -69,7 +69,7 @@ export default class TokenService implements ITokenService {
 
     saveMultipleTokens = async (tokens: object[]) => this.tokenDao.bulkCreate(tokens);
 
-    removeTokenById = async (id: number) => this.tokenDao.remove({ id });
+    removeToken = async (token: string) => this.tokenDao.remove({ token });
 
     generateAuthTokens = async (user: IUser) => {
         const accessTokenExpires: Date = addMinutes(new Date(), config.jwt.accessExpirationMinutes);

@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import { Request, Response } from 'express';
 import { ApiServiceResponse } from 'apiServiceResponse.js';
 import { logger } from '@configs/logger.js';
@@ -82,10 +82,7 @@ export default class AuthController {
             if (user == null) {
                 res.status(httpStatus.BAD_GATEWAY).send('User Not Found!');
             }
-            if (refreshTokenDoc.id === undefined) {
-                return res.status(httpStatus.BAD_GATEWAY).send('Bad Request!');
-            }
-            await this.tokenService.removeTokenById(refreshTokenDoc.id);
+            await this.tokenService.removeToken(req.body.token);
             const tokens = await this.tokenService.generateAuthTokens(user);
             res.send(tokens);
         } catch (e) {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import passport from 'passport';
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import { NextFunction, Request, Response } from 'express';
 import ApiError from '@helpers/ApiError.js';
 import { IUser } from '@models/interfaces/IUser.js';

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import 'mocha';
 import sinon from 'sinon';
 import AuthService from '@services/implementations/AuthService.js';

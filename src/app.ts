@@ -1,7 +1,7 @@
 import cors from 'cors';
 import passport from 'passport';
 import express, { Express, NextFunction, Request, Response } from 'express';
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import helmet from 'helmet';
 import db from '@models/index';
 import routes from '@routes/index.js';

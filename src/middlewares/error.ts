@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+import httpStatus from 'http-status/dist';
 import { NextFunction, Request, Response } from 'express';
 import { config } from '@configs/config.js';
 import { logger } from '@configs/logger.js';
